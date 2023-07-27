@@ -1,5 +1,5 @@
 import streamlit as st
-
+from utils import *
 st.title("ISOS 데이터 품질 평가 Solution")
 st.divider()
 with st.expander("데이터 품질 평가 관련 솔루션"):
@@ -31,3 +31,6 @@ with st.sidebar:
     if st.button("적시성 Timeliness", type='primary' if st.session_state['page']=='metrics' else 'secondary', use_container_width=True):
         st.session_state['page']='metrics'        
         st.experimental_rerun()
+
+if st.session_state['page']=='load':
+    load()
